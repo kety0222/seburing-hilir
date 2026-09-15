@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Galeri | Seburing Hilir</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<header>
+    <nav class="navbar">
+        <a href="index.html" class="logo">Seburing<span>.</span></a>
+
+        <button class="menu-btn" onclick="toggleMenu()">☰</button>
+
+        <ul class="nav-menu" id="navMenu">
+            <li><a href="index.html">Beranda</a></li>
+            <li><a href="profil.html">Profil</a></li>
+            <li><a href="keindahan.html">Keindahan</a></li>
+            <li><a href="potensi.html">Potensi</a></li>
+            <li><a href="galeri.html" class="active">Galeri</a></li>
+        </ul>
+    </nav>
+</header>
+
+<section class="page-header">
+    <p>GALERI</p>
+    <h1>Potret Seburing</h1>
+    <span>Mengabadikan cerita dalam setiap gambar.</span>
+</section>
+
+<section class="section">
+
+    <div class="section-title">
+        <p>MOMEN SEBURING</p>
+        <h2>Beberapa potret dari kehidupan desa.</h2>
+    </div>
+
+    <div class="gallery">
+
+        <div class="gallery-item large">
+            <img src="images/foto1.jpg" alt="Seburing">
+            <div class="overlay">
+                <h3>Pesona Seburing</h3>
+                <p>Keindahan desa</p>
+            </div>
+        </div>
+
+        <div class="gallery-item">
+            <img src="images/foto2.jpg" alt="Seburing">
+        </div>
+
+        <div class="gallery-item">
+            <img src="images/foto3.jpg" alt="Seburing">
+        </div>
+
+        <div class="gallery-item">
+            <img src="images/foto4.jpg" alt="Seburing">
+        </div>
+
+        <div class="gallery-item">
+            <img src="images/foto5.jpg" alt="Seburing">
+        </div>
+
+        <div class="gallery-item">
+            <img src="images/foto6.jpg" alt="Seburing">
+        </div>
+
+    </div>
+
+</section>
+
+<section class="location">
+
+    <div>
+        <p class="small-title">LOKASI DESA</p>
+
+        <h2>Temukan Seburing di peta.</h2>
+
+        <p>
+            Jl. Pendidikan, Dusun Kartini, RT.04/RW.04,
+            Seburing, Kecamatan Semparuk,
+            Kabupaten Sambas, Kalimantan Barat.
+        </p>
+    </div>
+
+    <div class="map">
+        <iframe
+            src="https://www.google.com/maps?q=Kantor+Desa+Seburing,+Kecamatan+Semparuk,+Kabupaten+Sambas,+Kalimantan+Barat&output=embed"
+            width="100%"
+            height="350"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy">
+        </iframe>
+    </div>
+
+</section>
+
+<footer>
+    <p>© 2026 Seburing Hilir. Cerita desa dalam setiap bingkai.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
