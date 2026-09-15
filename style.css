@@ -1,0 +1,531 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --green: #29483a;
+    --dark: #18251f;
+    --cream: #f5f0e7;
+    --white: #ffffff;
+    --gold: #b9955b;
+    --text: #59625d;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    color: var(--dark);
+    background: var(--cream);
+    line-height: 1.8;
+}
+
+img {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* NAVBAR */
+
+header {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+}
+
+.navbar {
+    max-width: 1200px;
+    margin: auto;
+    padding: 25px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: "DM Serif Display", serif;
+    font-size: 32px;
+    color: white;
+}
+
+.logo span {
+    color: var(--gold);
+}
+
+.nav-menu {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+}
+
+.nav-menu a {
+    color: white;
+    font-size: 14px;
+    transition: .3s;
+}
+
+.nav-menu a:hover,
+.nav-menu .active {
+    color: #d7bb87;
+}
+
+.menu-btn {
+    display: none;
+    border: none;
+    background: none;
+    color: white;
+    font-size: 28px;
+}
+
+/* HERO */
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 120px 8%;
+    position: relative;
+    background:
+        linear-gradient(
+            90deg,
+            rgba(20, 40, 30, .88),
+            rgba(20, 40, 30, .35)
+        ),
+        url("images/hero.jpg") center/cover;
+}
+
+.hero-content {
+    max-width: 700px;
+    color: white;
+}
+
+.small-title,
+.page-header p {
+    color: var(--gold);
+    letter-spacing: 4px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.hero h1 {
+    font-family: "DM Serif Display", serif;
+    font-size: clamp(55px, 8vw, 100px);
+    line-height: 1;
+    margin: 20px 0;
+}
+
+.hero h1 span {
+    color: #d7bb87;
+}
+
+.hero-content > p:not(.small-title) {
+    max-width: 550px;
+    margin-bottom: 30px;
+}
+
+/* BUTTON */
+
+.btn {
+    display: inline-block;
+    background: var(--gold);
+    color: white;
+    padding: 13px 25px;
+    border-radius: 30px;
+    font-size: 14px;
+    transition: .3s;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+}
+
+.btn-light {
+    background: white;
+    color: var(--green);
+}
+
+/* SECTION */
+
+.section {
+    max-width: 1200px;
+    margin: auto;
+    padding: 100px 30px;
+}
+
+.section-title {
+    max-width: 700px;
+    margin-bottom: 60px;
+}
+
+.section-title p {
+    color: var(--gold);
+    letter-spacing: 3px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.section-title h2 {
+    font-family: "DM Serif Display", serif;
+    font-size: 48px;
+    line-height: 1.2;
+    margin-top: 10px;
+}
+
+/* INTRO */
+
+.intro-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+}
+
+.quote {
+    font-family: "DM Serif Display", serif;
+    font-size: 34px;
+    line-height: 1.4;
+    color: var(--green);
+}
+
+.intro-grid p:not(.quote) {
+    color: var(--text);
+}
+
+.text-link {
+    display: inline-block;
+    margin-top: 20px;
+    color: var(--green);
+    font-weight: 600;
+}
+
+/* HIGHLIGHT */
+
+.highlight {
+    background: var(--green);
+    color: white;
+    padding: 80px 8%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.highlight h2 {
+    font-family: "DM Serif Display", serif;
+    font-size: 42px;
+    max-width: 750px;
+}
+
+/* PAGE HEADER */
+
+.page-header {
+    min-height: 60vh;
+    background:
+        linear-gradient(
+            rgba(25, 50, 38, .88),
+            rgba(25, 50, 38, .88)
+        ),
+        url("images/hero.jpg") center/cover;
+
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 130px 8% 70px;
+}
+
+.page-header h1 {
+    font-family: "DM Serif Display", serif;
+    font-size: clamp(50px, 7vw, 80px);
+    line-height: 1.1;
+}
+
+.page-header span {
+    margin-top: 15px;
+}
+
+/* ABOUT */
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 70px;
+    align-items: center;
+}
+
+.image-box img {
+    height: 600px;
+    border-radius: 8px;
+}
+
+.about-text h2 {
+    font-family: "DM Serif Display", serif;
+    font-size: 45px;
+    line-height: 1.2;
+    margin: 15px 0 25px;
+}
+
+.about-text p {
+    color: var(--text);
+    margin-bottom: 15px;
+}
+
+/* FACTS */
+
+.facts {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    background: var(--green);
+    color: white;
+    padding: 60px 8%;
+    text-align: center;
+}
+
+.fact h3 {
+    font-family: "DM Serif Display", serif;
+    font-size: 35px;
+    color: #d7bb87;
+}
+
+.fact p {
+    font-size: 13px;
+}
+
+/* CARDS */
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.beauty-card {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: .3s;
+}
+
+.beauty-card:hover {
+    transform: translateY(-8px);
+}
+
+.beauty-card img {
+    height: 300px;
+}
+
+.card-content {
+    padding: 30px;
+}
+
+.card-content span {
+    color: var(--gold);
+    font-size: 12px;
+}
+
+.card-content h3 {
+    font-family: "DM Serif Display", serif;
+    font-size: 28px;
+    margin: 5px 0;
+}
+
+.card-content p {
+    color: var(--text);
+    font-size: 14px;
+}
+
+/* POTENTIAL */
+
+.potential-list {
+    border-top: 1px solid #d5cec1;
+}
+
+.potential-list article {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    gap: 30px;
+    padding: 35px 0;
+    border-bottom: 1px solid #d5cec1;
+}
+
+.number {
+    font-family: "DM Serif Display", serif;
+    font-size: 35px;
+    color: var(--gold);
+}
+
+.potential-list h3 {
+    font-family: "DM Serif Display", serif;
+    font-size: 30px;
+}
+
+.potential-list p {
+    color: var(--text);
+}
+
+/* QUOTE */
+
+.quote-section {
+    background: var(--green);
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.quote-section > p {
+    color: var(--gold);
+    font-size: 80px;
+    font-family: serif;
+    line-height: .5;
+}
+
+.quote-section h2 {
+    max-width: 800px;
+    margin: auto;
+    font-family: "DM Serif Display", serif;
+    font-size: 45px;
+}
+
+/* GALLERY */
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.gallery-item {
+    height: 300px;
+    overflow: hidden;
+    position: relative;
+}
+
+.gallery-item.large {
+    grid-row: span 2;
+    height: 615px;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    transition: .5s;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.06);
+}
+
+.overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 30px;
+    color: white;
+    background: linear-gradient(transparent, rgba(0,0,0,.75));
+}
+
+/* LOCATION */
+
+.location {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    padding: 80px 8%;
+    background: white;
+}
+
+.location h2 {
+    font-family: "DM Serif Display", serif;
+    font-size: 45px;
+    line-height: 1.2;
+    margin: 15px 0;
+}
+
+.location p {
+    color: var(--text);
+}
+
+.map iframe {
+    border-radius: 8px;
+}
+
+/* FOOTER */
+
+footer {
+    background: var(--dark);
+    color: #c7cdc9;
+    text-align: center;
+    padding: 25px;
+    font-size: 13px;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 800px) {
+
+    .menu-btn {
+        display: block;
+    }
+
+    .nav-menu {
+        display: none;
+        position: absolute;
+        top: 80px;
+        left: 20px;
+        right: 20px;
+        background: var(--green);
+        padding: 20px;
+        flex-direction: column;
+        gap: 15px;
+        border-radius: 10px;
+    }
+
+    .nav-menu.show {
+        display: flex;
+    }
+
+    .intro-grid,
+    .about-grid,
+    .location {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .facts {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+
+    .card-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .gallery-item.large {
+        grid-row: span 1;
+        height: 300px;
+    }
+
+    .highlight {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .section-title h2,
+    .highlight h2,
+    .about-text h2,
+    .location h2,
+    .quote-section h2 {
+        font-size: 36px;
+    }
+}
