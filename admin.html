@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel Admin Desa Seburing Hilir</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #f4f4f9; margin: 20px; }
+        .container { max-width: 600px; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); margin: auto; }
+        h2 { color: #333; text-align: center; }
+        label { display: block; margin-top: 10px; font-weight: bold; }
+        input, textarea, button { width: 100%; padding: 10px; margin-top: 5px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; }
+        button { background-color: #28a745; color: white; font-size: 16px; border: none; cursor: pointer; margin-top: 15px; }
+        button:hover { background-color: #218838; }
+        .hidden { display: none; }
+    </style>
+</head>
+<body>
+
+<div class="container" id="login-box">
+    <h2>Login Admin Desa</h2>
+    <label>Username</label>
+    <input type="text" id="username" placeholder="Masukkan username">
+    <label>Password</label>
+    <input type="password" id="password" placeholder="Masukkan password">
+    <button onclick="login()">Masuk</button>
+</div>
+
+<div class="container hidden" id="admin-panel">
+    <h2>Tambah Berita/Kegiatan Desa</h2>
+    <label>Judul Berita</label>
+    <input type="text" id="judul" placeholder="Judul kegiatan/berita">
+    <label>URL Gambar/Foto</label>
+    <input type="text" id="gambar" placeholder="Contoh: desa seburing.jpeg">
+    <label>Isi Berita</label>
+    <textarea id="isi" rows="5" placeholder="Tuliskan berita di sini..."></textarea>
+    <button onclick="simpanBerita()">Publikasikan Berita</button>
+    <button onclick="logout()" style="background-color: #dc3545;">Keluar</button>
+</div>
+
+<script>
+    function login() {
+        var user = document.getElementById('username').value;
+        var pass = document.getElementById('password').value;
+        
+        // Atur Username dan Password Admin di sini
+        if (user === "admin" && pass === "desa123") {
+            document.getElementById('login-box').classList.add('hidden');
+            document.getElementById('admin-panel').classList.remove('hidden');
+        } else {
+            alert("Username atau Password salah!");
+        }
+    }
+
+    function simpanBerita() {
+        var judul = document.getElementById('judul').value;
+        var gambar = document.getElementById('gambar').value;
+        var isi = document.getElementById('isi').value;
+
+        if(!judul || !isi) {
+            alert("Judul dan isi berita wajib diisi!");
+            return;
+        }
+
+        var beritaBaru = {
+            judul: judul,
+            gambar: gambar,
+            isi: isi,
+            tanggal: new Date().toLocaleDateString('id-ID')
+        };
+
+        var daftarBerita = JSON.parse(localStorage.getItem('beritaDesa')) || [];
+        daftarBerita.unshift(beritaBaru);
+        localStorage.setItem('beritaDesa', JSON.stringify(daftarBerita));
+
+        alert("Berita berhasil ditambahkan!");
+        document.getElementById('judul').value = '';
+        document.getElementById('gambar').value = '';
+        document.getElementById('isi').value = '';
+    }
+
+    function logout() {
+        document.getElementById('login-box').classList.remove('hidden');
+        document.getElementById('admin-panel').classList.add('hidden');
+    }
+</script>
+
+</body>
+</html>
