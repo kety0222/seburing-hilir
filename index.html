@@ -84,11 +84,48 @@
         Lihat Keindahan
     </a>
 </section>
+<!-- SEKSI BERITA/KEGIATAN TERBARU -->
+<section class="section">
+    <div class="section-title">
+        <p>KABAR DESA</p>
+        <h2>Berita & Kegiatan Terbaru</h2>
+    </div>
 
+    <div id="wadah-berita" class="intro-grid">
+        <!-- Berita dari halaman admin akan muncul di sini otomatis -->
+    </div>
+</section>
 <footer>
     <p>© 2026 Seburing Hilir. Dibuat dengan ❤️ untuk desa.</p>
 </footer>
 
 <script src="script.js"></script>
+    <script>
+    function muatBerita() {
+        var wadah = document.getElementById('wadah-berita');
+       var daftarBerita = JSON.parse(localStorage.getItem('beritaDesa')) || [];
+
+        if (daftarBerita.length === 0) {
+            wadah.innerHTML = "<p>Belum ada berita atau kegiatan terbaru yang dipublikasikan.</p>";
+            return;
+        }
+
+        var html = "";
+        daftarBerita.forEach(function(item) {
+            html += `
+                <div class="card">
+                    <h3>${item.judul}</h3>
+                    <span class="tgl-berita">Dipublikasikan: ${item.tanggal}</span>
+                    ${item.gambar ? `<img src="${item.gambar}" alt="${item.judul}">` : ''}
+                    <p>${item.isi}</p>
+                </div>
+            `;
+        });
+
+        wadah.innerHTML = html;
+    }
+
+    document.addEventListener("DOMContentLoaded", muatBerita);
+</script>
 </body>
 </html>
