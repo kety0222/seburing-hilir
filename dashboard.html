@@ -1,0 +1,50 @@
+```html
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dashboard Admin | Seburing Hilir</title>
+
+    <link rel="stylesheet" href="admin.css">
+</head>
+
+<body>
+
+    <div class="login-container">
+
+        <div class="login-box">
+
+            <h1>Dashboard Admin</h1>
+
+            <p>Selamat datang di Admin Seburing Hilir</p>
+
+            <button onclick="window.location.href='index.html'">
+                Lihat Website
+            </button>
+
+            <button onclick="logout()">
+                Keluar
+            </button>
+
+        </div>
+
+    </div>
+
+    <script>
+        // Cek apakah sudah login
+        if (localStorage.getItem("adminLogin") !== "true") {
+            window.location.href = "admin.html";
+        }
+
+        function logout() {
+            localStorage.removeItem("adminLogin");
+            window.location.href = "admin.html";
+        }
+    </script>
+
+</body>
+</html>
+```
