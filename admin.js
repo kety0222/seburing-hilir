@@ -7,8 +7,8 @@ document.getElementById("loginForm").addEventListener("submit", function(event) 
     const errorMessage = document.getElementById("errorMessage");
 
     // LOGIN ADMIN
-    const adminUsername = "admin";
-    const adminPassword = "admin12345";
+    const adminUsername = "kety";
+    const adminPassword = "kety123";
 
     if (username === adminUsername && password === adminPassword) {
 
