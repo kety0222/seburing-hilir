@@ -8,7 +8,7 @@ document.getElementById("loginForm").addEventListener("submit", function(event) 
 
     // LOGIN ADMIN
     const adminUsername = "admin";
-    const adminPassword = "12345";
+    const adminPassword = "admin12345";
 
     if (username === adminUsername && password === adminPassword) {
 
